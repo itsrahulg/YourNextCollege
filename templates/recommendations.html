@@ -1,0 +1,977 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.svg'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'recommendations.css'%}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div id="preloader">
+
+
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-light fixed-top bg">
+            <a href = "#" class="navbar-brand fs-2 ms-3 text-white">YourNextCollege</a> 
+        
+        <button class="navbar-toggler me-3 text-white" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#btn">
+        <i class='bx bx-menu bx-md'></i>
+        </button>
+        <div class="collapse navbar-collapse ul-bg" id="btn">
+            <ul class="navbar-nav ms-auto" >
+                <li class="nav-item">
+                    <a href="/" class="nav-link mx-3 text-white fs-5">🏠Home</a>
+                </li> 
+
+                <li class="nav-item">
+                    <a href="#about-us" class="nav-link mx-3 text-white fs-5">💡About</a>
+                </li>
+
+                
+
+             
+
+
+            </ul>
+        </div>
+        
+    </nav>
+
+
+
+    <main style="margin-top: 5rem; margin-bottom: 5rem;">
+        
+        
+        <!--OVERALL RANKINGS-->
+
+        <div class=" container col-md-8" style="margin-bottom: 2rem;" >
+
+            <div class="card" style="border: none;">
+                <div class="row">
+                    <h1 class="text-center">Overall Rankings 2023</h1>
+                    <h6 class="text-center"><i>*please note that the lists here show only the top 10 institutions</i></h6>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container" >
+
+            <div class="row">
+
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Technology Madras</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 1</p>
+                                <p class="content"><b>State :</b> Tamil Nadu</p>
+                                <p class="content"><b>City : </b> Chennai</p>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Science</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 2</p>
+                                <p class="content"><b>State :</b> Karnataka</p>
+                                <p class="content"><b>City : </b> Bengaluru</p>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Technology Delhi</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 3</p>
+                                <p class="content"><b>State :</b> Delhi</p>
+                                <p class="content"><b>City : </b> New Delhi</p>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Technology Bombay</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 4</p>
+                                <p class="content"><b>State :</b> Maharashtra</p>
+                                <p class="content"><b>City : </b> Mumbai</p>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            
+            <!-- Row 2 -->
+            <div class="row">
+            
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Technology Kanpur</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 5</p>
+                                <p class="content"><b>State :</b> Uttar Pradesh</p>
+                                <p class="content"><b>City : </b> Kanpur</p>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">AIIMS Delhi</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 6</p>
+                                <p class="content"><b>State :</b> Delhi</p>
+                                <p class="content"><b>City : </b> New Delhi</p>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">IIT Kharagpur</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 7</p>
+                                <p class="content"><b>State :</b> West Bengal</p>
+                                <p class="content"><b>City : </b> Kharagpur</p>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">IIT Roorkee</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 8</p>
+                                <p class="content"><b>State :</b> Uttarakhand</p>
+                                <p class="content"><b>City : </b> Roorkee</p>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            
+            <!-- Row 3 -->
+            <div class="row">
+            
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">IIT Guwahati</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 9</p>
+                                <p class="content"><b>State :</b> Assam</p>
+                                <p class="content"><b>City : </b> Guwahati</p>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Jawaharlal Nehru University</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 10</p>
+                                <p class="content"><b>State :</b> Delhi</p>
+                                <p class="content"><b>City : </b> New Delhi</p>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            
+             
+            </div>
+            
+        </div>
+
+        <div class=" container col-md-8" style="margin-bottom: 7rem;" >
+            <div class="card" style="border: none;">
+                <div class="row">
+                    <h5 class="text-center">For more detailed ranking recommendations please visit:</h5>
+                    <a href="https://www.nirfindia.org/2023/OverallRanking.html"><h6 class="text-center"><i>https://www.nirfindia.org/2023/OverallRanking.html</i></h6></a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <!--ENGINEERING COLLEGES-->
+        <div class=" container col-md-8" style="margin-bottom: 2rem; margin-top: 4rem;" >
+
+            <div class="card" style="border: none;">
+                <div class="row">
+                    <h1 class="text-center">Engineering Colleges 2023</h1>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <!-- Row 1 -->
+            <div class="row">
+                <!-- Institution 1 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Technology Madras</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 1</p>
+                                <p class="content"><b>State :</b> Tamil Nadu</p>
+                                <p class="content"><b>City : </b> Chennai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 2 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Technology Delhi</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 2</p>
+                                <p class="content"><b>State :</b> Delhi</p>
+                                <p class="content"><b>City : </b> New Delhi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 3 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Technology Bombay</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 3</p>
+                                <p class="content"><b>State :</b> Maharashtra</p>
+                                <p class="content"><b>City : </b> Mumbai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 4 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Technology Kanpur</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 4</p>
+                                <p class="content"><b>State :</b> Uttar Pradesh</p>
+                                <p class="content"><b>City : </b> Kanpur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="row">
+                <!-- Institution 5 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Technology Roorkee</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 5</p>
+                                <p class="content"><b>State :</b> Uttarakhand</p>
+                                <p class="content"><b>City : </b> Roorkee</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 6 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Technology Kharagpur</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 6</p>
+                                <p class="content"><b>State :</b> West Bengal</p>
+                                <p class="content"><b>City : </b> Kharagpur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 7 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Technology Guwahati</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 7</p>
+                                <p class="content"><b>State :</b> Assam</p>
+                                <p class="content"><b>City : </b> Guwahati</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 8 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Technology Hyderabad</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 8</p>
+                                <p class="content"><b>State :</b> Telangana</p>
+                                <p class="content"><b>City : </b> Hyderabad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="row">
+                <!-- Institution 9 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">National Institute of Technology Tiruchirappalli</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 9</p>
+                                <p class="content"><b>State :</b> Tamil Nadu</p>
+                                <p class="content"><b>City : </b> Tiruchirappalli</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 10 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Jadavpur University</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 10</p>
+                                <p class="content"><b>State :</b> West Bengal</p>
+                                <p class="content"><b>City : </b> Kolkata</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class=" container col-md-8" style="margin-bottom: 7rem;" >
+            <div class="card" style="border: none;">
+                <div class="row">
+                    <h5 class="text-center">For more detailed ranking recommendations please visit:</h5>
+                    <a href="https://www.nirfindia.org/2023/EngineeringRanking.html"><h6 class="text-center"><i>https://www.nirfindia.org/2023/EngineeringRanking.html</i></h6></a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+         <!--Unvieristy-->
+         <div class=" container col-md-8" style="margin-bottom: 2rem; margin-top: 4rem;" >
+
+            <div class="card" style="border: none;">
+                <div class="row">
+                    <h1 class="text-center">Universities 2023</h1>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="container">
+            <!-- Row 1 -->
+            <div class="row">
+                <!-- Institution 1 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Indian Institute of Science</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 1</p>
+                                <p class="content"><b>State :</b> Karnataka</p>
+                                <p class="content"><b>City : </b> Bengaluru</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 2 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Jawaharlal Nehru University</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 2</p>
+                                <p class="content"><b>State :</b> Delhi</p>
+                                <p class="content"><b>City : </b> New Delhi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 3 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Jamia Millia Islamia</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 3</p>
+                                <p class="content"><b>State :</b> Delhi</p>
+                                <p class="content"><b>City : </b> New Delhi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 4 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Jadavpur University</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 4</p>
+                                <p class="content"><b>State :</b> West Bengal</p>
+                                <p class="content"><b>City : </b> Kolkata</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="row">
+                <!-- Institution 5 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Banaras Hindu University</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 5</p>
+                                <p class="content"><b>State :</b> Uttar Pradesh</p>
+                                <p class="content"><b>City : </b> Varanasi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 6 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Manipal Academy of Higher Education</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 6</p>
+                                <p class="content"><b>State :</b> Karnataka</p>
+                                <p class="content"><b>City : </b> Manipal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 7 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Amrita Vishwa Vidyapeetham</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 7</p>
+                                <p class="content"><b>State :</b> Tamil Nadu</p>
+                                <p class="content"><b>City : </b> Coimbatore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 8 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Vellore Institute of Technology</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 8</p>
+                                <p class="content"><b>State :</b> Tamil Nadu</p>
+                                <p class="content"><b>City : </b> Vellore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="row">
+                <!-- Institution 9 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">Aligarh Muslim University</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 9</p>
+                                <p class="content"><b>State :</b> Uttar Pradesh</p>
+                                <p class="content"><b>City : </b> Aligarh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Institution 10 -->
+                <div class="col-md-3 my-1">
+                    <div class="card card-style">
+                        <div class="card-body">
+                            <p class="card-text card-text-style">University of Hyderabad</p>
+                            <div>
+                                <p class="content"><b>NIRF Ranking :</b> 10</p>
+                                <p class="content"><b>State :</b> Telangana</p>
+                                <p class="content"><b>City : </b> Hyderabad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class=" container col-md-8" style="margin-bottom: 7rem;" >
+            <div class="card" style="border: none;">
+                <div class="row">
+                    <h5 class="text-center">For more detailed ranking recommendations please visit:</h5>
+                    <a href="https://www.nirfindia.org/2023/UniversityRanking.html"><h6 class="text-center"><i>https://www.nirfindia.org/2023/UniversityRanking.html</i></h6></a>
+                </div>
+            </div>
+        </div>
+            
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--COLLEGES-->
+                <div class=" container col-md-8" style="margin-bottom: 2rem; margin-top: 4rem;" >
+
+                    <div class="card" style="border: none;">
+                        <div class="row">
+                            <h1 class="text-center">Colleges 2023</h1>
+                        </div>
+                    </div>
+        
+                </div>
+
+
+                <div class="container">
+                    <!-- Row 1 -->
+                    <div class="row">
+                        <!-- College 1 -->
+                        <div class="col-md-3 my-1">
+                            <div class="card card-style">
+                                <div class="card-body">
+                                    <p class="card-text card-text-style">Miranda House</p>
+                                    <div>
+                                        <p class="content"><b>NIRF Ranking :</b> 1</p>
+                                        <p class="content"><b>State :</b> Delhi</p>
+                                        <p class="content"><b>City : </b> Delhi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- College 2 -->
+                        <div class="col-md-3 my-1">
+                            <div class="card card-style">
+                                <div class="card-body">
+                                    <p class="card-text card-text-style">Hindu College</p>
+                                    <div>
+                                        <p class="content"><b>NIRF Ranking :</b> 2</p>
+                                        <p class="content"><b>State :</b> Delhi</p>
+                                        <p class="content"><b>City : </b> Delhi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- College 3 -->
+                        <div class="col-md-3 my-1">
+                            <div class="card card-style">
+                                <div class="card-body">
+                                    <p class="card-text card-text-style">Presidency College</p>
+                                    <div>
+                                        <p class="content"><b>NIRF Ranking :</b> 3</p>
+                                        <p class="content"><b>State :</b> Tamil Nadu</p>
+                                        <p class="content"><b>City : </b> Chennai</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- College 4 -->
+                        <div class="col-md-3 my-1">
+                            <div class="card card-style">
+                                <div class="card-body">
+                                    <p class="card-text card-text-style">PSGR Krishnammal College for Women</p>
+                                    <div>
+                                        <p class="content"><b>NIRF Ranking :</b> 4</p>
+                                        <p class="content"><b>State :</b> Tamil Nadu</p>
+                                        <p class="content"><b>City : </b> Coimbatore</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="row">
+                        <!-- College 5 -->
+                        <div class="col-md-3 my-1">
+                            <div class="card card-style">
+                                <div class="card-body">
+                                    <p class="card-text card-text-style">St. Xavier's College</p>
+                                    <div>
+                                        <p class="content"><b>NIRF Ranking :</b> 5</p>
+                                        <p class="content"><b>State :</b> West Bengal</p>
+                                        <p class="content"><b>City : </b> Kolkata</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- College 6 -->
+                        <div class="col-md-3 my-1">
+                            <div class="card card-style">
+                                <div class="card-body">
+                                    <p class="card-text card-text-style">Atma Ram Sanatan Dharm College</p>
+                                    <div>
+                                        <p class="content"><b>NIRF Ranking :</b> 6</p>
+                                        <p class="content"><b>State :</b> Delhi</p>
+                                        <p class="content"><b>City : </b> New Delhi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- College 7 -->
+                        <div class="col-md-3 my-1">
+                            <div class="card card-style">
+                                <div class="card-body">
+                                    <p class="card-text card-text-style">Loyola College</p>
+                                    <div>
+                                        <p class="content"><b>NIRF Ranking :</b> 7</p>
+                                        <p class="content"><b>State :</b> Tamil Nadu</p>
+                                        <p class="content"><b>City : </b> Chennai</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- College 8 -->
+                        <div class="col-md-3 my-1">
+                            <div class="card card-style">
+                                <div class="card-body">
+                                    <p class="card-text card-text-style">Rama Krishna Mission Vivekananda Centenary College</p>
+                                    <div>
+                                        <p class="content"><b>NIRF Ranking :</b> 8</p>
+                                        <p class="content"><b>State :</b> West Bengal</p>
+                                        <p class="content"><b>City : </b> Kolkata</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row 3 -->
+                    <div class="row">
+                        <!-- College 9 -->
+                        <div class="col-md-3 my-1">
+                            <div class="card card-style">
+                                <div class="card-body">
+                                    <p class="card-text card-text-style">Kirori Mal College</p>
+                                    <div>
+                                        <p class="content"><b>NIRF Ranking :</b> 9</p>
+                                        <p class="content"><b>State :</b> Delhi</p>
+                                        <p class="content"><b>City : </b> Delhi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- College 10 -->
+                        <div class="col-md-3 my-1">
+                            <div class="card card-style">
+                                <div class="card-body">
+                                    <p class="card-text card-text-style">Lady Shri Ram College For Women</p>
+                                    <div>
+                                        <p class="content"><b>NIRF Ranking :</b> 9</p>
+                                        <p class="content"><b>State :</b> Delhi</p>
+                                        <p class="content"><b>City : </b> New Delhi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+         
+                <div class=" container col-md-8" style="margin-bottom: 7rem;" >
+                    <div class="card" style="border: none;">
+                        <div class="row">
+                            <h5 class="text-center">For more detailed ranking recommendations please visit:</h5>
+                            <a href="https://www.nirfindia.org/2023/CollegeRanking.html"><h6 class="text-center"><i>https://www.nirfindia.org/2023/CollegeRanking.html</i></h6></a>
+                        </div>
+                    </div>
+                </div>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!--MEDICAL COLLEGES-->
+                    <div class=" container col-md-8" style="margin-bottom: 2rem; margin-top: 4rem;" >
+
+                        <div class="card" style="border: none;">
+                            <div class="row">
+                                <h1 class="text-center"> Medical Colleges 2023</h1>
+                            </div>
+                        </div>
+            
+                    </div>
+
+
+
+                    <div class="container">
+                        <!-- Row 1 -->
+                        <div class="row">
+                            <!-- Institution 1 -->
+                            <div class="col-md-3 my-1">
+                                <div class="card card-style">
+                                    <div class="card-body">
+                                        <p class="card-text card-text-style">All India Institute of Medical Sciences, Delhi</p>
+                                        <div>
+                                            <p class="content"><b>NIRF Ranking :</b> 1</p>
+                                            <p class="content"><b>State :</b> Delhi</p>
+                                            <p class="content"><b>City : </b> New Delhi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Institution 2 -->
+                            <div class="col-md-3 my-1">
+                                <div class="card card-style">
+                                    <div class="card-body">
+                                        <p class="card-text card-text-style">Post Graduate Institute of Medical Education and Research</p>
+                                        <div>
+                                            <p class="content"><b>NIRF Ranking :</b> 2</p>
+                                            <p class="content"><b>State :</b> Chandigarh</p>
+                                            <p class="content"><b>City : </b> Chandigarh</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Institution 3 -->
+                            <div class="col-md-3 my-1">
+                                <div class="card card-style">
+                                    <div class="card-body">
+                                        <p class="card-text card-text-style">Christian Medical College</p>
+                                        <div>
+                                            <p class="content"><b>NIRF Ranking :</b> 3</p>
+                                            <p class="content"><b>State :</b> Tamil Nadu</p>
+                                            <p class="content"><b>City : </b> Vellore</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Institution 4 -->
+                            <div class="col-md-3 my-1">
+                                <div class="card card-style">
+                                    <div class="card-body">
+                                        <p class="card-text card-text-style">National Institute of Mental Health & Neuro Sciences</p>
+                                        <div>
+                                            <p class="content"><b>NIRF Ranking :</b> 4</p>
+                                            <p class="content"><b>State :</b> Karnataka</p>
+                                            <p class="content"><b>City : </b> Bangalore</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 2 -->
+                        <div class="row">
+                            <!-- Institution 5 -->
+                            <div class="col-md-3 my-1">
+                                <div class="card card-style">
+                                    <div class="card-body">
+                                        <p class="card-text card-text-style">Jawaharlal Institute of Post Graduate Medical Education & Research</p>
+                                        <div>
+                                            <p class="content"><b>NIRF Ranking :</b> 5</p>
+                                            <p class="content"><b>State :</b> Pondicherry</p>
+                                            <p class="content"><b>City : </b> Puducherry</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Institution 6 -->
+                            <div class="col-md-3 my-1">
+                                <div class="card card-style">
+                                    <div class="card-body">
+                                        <p class="card-text card-text-style">Amrita Vishwa Vidyapeetham</p>
+                                        <div>
+                                            <p class="content"><b>NIRF Ranking :</b> 6</p>
+                                            <p class="content"><b>State :</b> Tamil Nadu</p>
+                                            <p class="content"><b>City : </b> Coimbatore</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Institution 7 -->
+                            <div class="col-md-3 my-1">
+                                <div class="card card-style">
+                                    <div class="card-body">
+                                        <p class="card-text card-text-style">Sanjay Gandhi Postgraduate Institute of Medical Sciences</p>
+                                        <div>
+                                            <p class="content"><b>NIRF Ranking :</b> 7</p>
+                                            <p class="content"><b>State :</b> Uttar Pradesh</p>
+                                            <p class="content"><b>City : </b> Lucknow</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Institution 8 -->
+                            <div class="col-md-3 my-1">
+                                <div class="card card-style">
+                                    <div class="card-body">
+                                        <p class="card-text card-text-style">Banaras Hindu University</p>
+                                        <div>
+                                            <p class="content"><b>NIRF Ranking :</b> 8</p>
+                                            <p class="content"><b>State :</b> Uttar Pradesh</p>
+                                            <p class="content"><b>City : </b> Varanasi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 3 -->
+                        <div class="row">
+                            <!-- Institution 9 -->
+                            <div class="col-md-3 my-1">
+                                <div class="card card-style">
+                                    <div class="card-body">
+                                        <p class="card-text card-text-style">Kasturba Medical College, Manipal</p>
+                                        <div>
+                                            <p class="content"><b>NIRF Ranking :</b> 9</p>
+                                            <p class="content"><b>State :</b> Karnataka</p>
+                                            <p class="content"><b>City : </b> Manipal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Institution 10 -->
+                            <div class="col-md-3 my-1">
+                                <div class="card card-style">
+                                    <div class="card-body">
+                                        <p class="card-text card-text-style">Sree Chitra Tirunal Institute for Medical Sciences and Technology</p>
+                                        <div>
+                                            <p class="content"><b>NIRF Ranking :</b> 10</p>
+                                            <p class="content"><b>State :</b> Kerala</p>
+                                            <p class="content"><b>City : </b> Thiruvananthapuram</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" container col-md-8" style="margin-bottom: 7rem;" >
+                        <div class="card" style="border: none;">
+                            <div class="row">
+                                <h5 class="text-center">For more detailed ranking recommendations please visit:</h5>
+                                <a href="https://www.nirfindia.org/2023/MedicalRanking.html"><h6 class="text-center"><i>https://www.nirfindia.org/2023/MedicalRanking.html</i></h6></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+    </main>
+
+<footer class="bg-dark text-white pt-5 pb-4" id="about-us">
+    <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text mb-4 font-weight-bold text-warning">YourNextCollege</h5>
+                <p><strong>A college finder project using API:</strong><br> A student friendly website that allows students to get the details of all the colleges in India</p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">contributors</h5>
+                <p>PSG College Of Technology, MCA(23MXian)</p>
+                <p>NITHISH P (23MX316)<br>PRAVEEN Y (23MX320)<br>RAHUL G (23MX322)</p>
+            </div>
+        
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Tech Stack</h5>
+                <p>Front-end: HTML,CSS,JavaScript,<br>Bootstrap<br>Backend: Django <br>Database: MySql</p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">API link:</h5>
+                <p>https://data.gov.in/catalog/<br>list-colleges-aishe-survey</p>
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){
+            loader.style.display = "none";
+        })
+    </script>
+
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+
+   
+</html>

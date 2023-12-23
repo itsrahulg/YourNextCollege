@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.svg'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'register-form.css'%}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+    #password-toggle{
+  border: none;
+  box-shadow: inset;
+
+}
+#confirmpassword-toggle{
+  border: none;
+  box-shadow: inset;
+}
+#fname:focus:not(:valid),#lname:focus:not(:valid),#password:focus:not(:valid),#email:focus:not(:valid){
+            color: red;
+            border: 1px solid red;
+            font-weight: 400;
+        }
+        .errorfname,.errorlname,.errorpassword,.erroremail{
+            display: none;
+        }
+        #fname:focus:not(:valid) + .errorfname,#lname:focus:not(:valid)+ .errorlname,#password:focus:not(:valid) + .errorpassword,#email:focus:not(:valid)+.erroremail{
+            display: inline;
+        }
+        .suggest-button{
+            margin-top: 0.5rem;
+            padding:0.3rem;
+            border-radius: 0.3rem;
+            font-size: smaller;
+            border: none;
+            background-color: #FFC436;
+            color: white;
+        }
+        h5{
+            color:red;
+        }
+
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-light bg">
+        <a href = "#" class="navbar-brand fs-2 ms-3 text-white">YourNextCollege</a> 
+    
+    <button class="navbar-toggler me-3 text-white" type="button" data-bs-toggle="collapse" 
+    data-bs-target="#btn">
+    <i class='bx bx-menu bx-md'></i>
+    </button>
+    <div class="collapse navbar-collapse ul-bg" id="btn">
+        <ul class="navbar-nav ms-auto" >
+            <li class="nav-item">
+                <a href="/" class="nav-link mx-3 text-white fs-5">🏠Home</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#about-us" class="nav-link mx-3 text-white fs-5">💡About</a>
+            </li>
+
+
+            <li class="nav-item ">
+                <a href="/login/" class="nav-link mx-3 text-white fs-5 ">👋Login</a>
+            </li>
+
+            <li class="nav-item ">
+                <a href="/register/" class="nav-link mx-3 text-white fs-5 ">🖊️Sign-up</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+
+
+    
+    <div class="container my-4" >
+        <div class="row  ">
+            <div class="col-md-5 mx-auto">
+                <div class="card login-card-style">
+                    <img src="{% static 'images/register.png'%}" class="login-img-style" alt="...">
+                    <div class="card-body">
+                        <form method="post" id="myForm" action="/register/">
+                            {% csrf_token %}
+                            <h3 style="text-align: center;">Just a few more steps..</h3>
+
+                                     <div class=" row mb-3">
+                                    <label for="fname"  class="form-label">Name</label>
+    
+                                    <div class="col">
+                                        <input type="text" name="first_name" id="fname" class="form-control" placeholder="First name" pattern="[A-Za-z]+" title="name contain Alphabet only" required>
+                                        <p class="errorfname">Name only contain Alphabets</p>
+                                    </div>
+    
+                                    <div class="col">
+                                        <input type="text"name="last_name" id="lname" class="form-control" placeholder="Last name" pattern="[A-Za-z]+" title="name contain Alphabet only">
+                                        <p class="errorlname">Name only contain Alphabets</p>
+                                    </div>
+                                        
+                                   
+                                   
+                                </div>
+    
+    
+                                <div class="mb-3 mt-4">
+                                  <label for="email" class="form-label">Email address</label>
+                                  <input type="email" name="email"class="form-control" id="email" placeholder="enter your email address"  title="enter a valid email address" required>
+                                  <p class="erroremail">Enter a valid Email Address</p>
+                                </div>
+
+                        
+                            
+                         
+                            
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password <button type="button" id="password-toggle" onclick="togglePasswordVisibility()">🔍</button> </label>
+                                    <input type="password"name="password" class="form-control" id="password" placeholder="enter your password" 
+                                    maxlength="15" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,15}$" 
+                                    title="password must contain one number,one lowercase,one uppercase,one special character and not contain whitespace and use minimum 8 characters" required>
+                                    <p class="errorpassword">Password must contain one number,one lowercase,one uppercase,one special character and not contain whitespace and use minimum 8 characters</p>
+                                    
+                                  </div>
+      
+      
+                                  <div class="mb-3">
+                                      <label for="confirm" class="form-label">Confirm Password <button type="button" id="confirmpassword-toggle" onclick="toggleconfirmPasswordVisibility()">🔍</button> </label>
+                                      <input type="password"name="password2" class="form-control" id="confirm" placeholder="confirm your password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,15}$" 
+                                      title="password must contain one number,one lowercase,one uppercase,one special character and not contain whitespace and use minimum 8 character" maxlength="15" required>
+                                      <button  type="button" class="Suggest-btn suggest-button" onclick="generatePass()">Suggest a strong password</button>
+                                      {% for message in messages %}
+                            <h5>{{message}}</h5>
+                            {% endfor %}
+                                  </div>
+                            <button type="submit" class="btn btn-style" >Create My Account</button>
+                          </form>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer class="bg-dark text-white pt-5 pb-4" id="about-us">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text mb-4 font-weight-bold text-warning">YourNextCollege</h5>
+                    <p><strong>A college finder project using API:</strong><br> A student friendly website that allows students to get the details of all the colleges in India</p>
+                </div>
+    
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">contributors</h5>
+                    <p>PSG College Of Technology, MCA(23MXian)</p>
+                    <p>NITHISH P (23MX316)<br>PRAVEEN Y (23MX320)<br>RAHUL G (23MX322)</p>
+                </div>
+            
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Tech Stack</h5>
+                    <p>Front-end: HTML,CSS,Bootstrap<br>Backend: Django <br>Database: MySql</p>
+                </div>
+    
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">API link:</h5>
+                    <p>https://data.gov.in/catalog/list-colleges-aishe-survey</p>
+                </div>
+    
+            </div>
+        </div>
+        <script >
+            function generatePass() {
+	let pass = '';
+	let upperChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	let lowerChars = 'abcdefghijklmnopqrstuvwxyz';
+	let digits = '1234567890';
+	let specialChars = '@$!%*?&';
+	let allChars = upperChars + lowerChars + digits + specialChars;
+  
+	// Generate at least one of each character type
+	pass += upperChars.charAt(Math.floor(Math.random() * upperChars.length));
+	pass += lowerChars.charAt(Math.floor(Math.random() * lowerChars.length));
+	pass += digits.charAt(Math.floor(Math.random() * digits.length));
+	pass += specialChars.charAt(Math.floor(Math.random() * specialChars.length));
+  
+	// Generate the remaining characters
+	for (let i = 0; i < 4; i++) { // You need 4 more characters to reach a total of 8
+	  let char = allChars.charAt(Math.floor(Math.random() * allChars.length));
+	  pass += char;
+	}
+  
+	// Shuffle the password characters to randomize their order
+	pass = pass.split('').sort(function () {
+	  return 0.5 - Math.random();
+	}).join('');
+  
+	document.getElementById("password").value = pass;
+	document.getElementById("confirm").value = pass;
+  }
+  function togglePasswordVisibility() {
+	var passwordField = document.getElementById("password");
+	var passwordToggle = document.getElementById("password-toggle");
+
+	if (passwordField.type === "password") {
+	  passwordField.type = "text";
+	  passwordToggle.innerText = "🫣";
+	} else {
+	  passwordField.type = "password";
+	  passwordToggle.innerText = "🔍";
+	}
+  }
+
+  //confirm password hidden/visible
+  function toggleconfirmPasswordVisibility() {
+	var passwordField = document.getElementById("confirm");
+	var passwordToggle = document.getElementById("confirmpassword-toggle");
+
+	if (passwordField.type === "password") {
+	  passwordField.type = "text";
+	  passwordToggle.innerText = "🫣";
+	} else {
+	  passwordField.type = "password";
+	  passwordToggle.innerText = "🔍";
+	}
+  }
+  document.getElementById('myForm').addEventListener('submit', ()=>{
+	
+  
+	// Get form data
+	var fname = document.getElementById('fname').value;
+	var lname = document.getElementById('lname').value;
+	var email = document.getElementById('email').value;
+	var password = document.getElementById('password').value;
+  
+	// Store data in localStorage
+	localStorage.setItem('fname', fname);
+	localStorage.setItem('lname', lname);
+	localStorage.setItem('email', email);
+	localStorage.setItem('password', password);
+
+  });
+
+        </script>
+    
+    </footer>
+</body class="vh-100 overflow-hidden">
+</html>

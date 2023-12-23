@@ -1,0 +1,612 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colleges</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.svg'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'college-display-page.css'%}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div id="preloader">
+
+    </div>
+
+    <form method="get" action="/universitydata/"  class="form-style" id="form-details">
+        
+        <nav class="navbar   navbar-dark bg-light fixed-top bg">
+                <a href = "#" class="navbar-brand fs-2 ms-4 text-white">University</a> 
+            
+            <button class="navbar-toggler me-3 text-white" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#btn">
+            <i class='bx bx-md'>Filters</i>
+            </button>
+            
+                    
+
+                    <div class="collapse navbar-collapse ul-bg ms-4" id="btn">
+                                <div class="btn-group dropend btn-sm ">
+                                    <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    States
+                                    </button>
+                                    <ul class="dropdown-menu force-scroll " id="statesList" aria-labelledby="dropdownMenuButton" style="list-style: none; padding: 0;  height: 200px;">
+                                        
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Select" id="Select" name="state" checked ">
+                                                            <label class="form-check-label" for="Select">Select</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Andhra_Pradesh" id="Andhra_Pradesh" name="state">
+                                                            <label class="form-check-label" for="Andhra_Pradesh">Andhra Pradesh</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Arunachal_Pradesh" id="Arunachal_Pradesh" name="state">
+                                                            <label class="form-check-label" for="Arunachal_Pradesh">Arunachal Pradesh</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Assam" id="Assam" name="state" >
+                                                            <label class="form-check-label" for="Assam">Assam</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Bihar" id="Bihar" name="state">
+                                                            <label class="form-check-label" for="Bihar">Bihar</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Chhattisgarh" id="Chhattisgarh" name="state">
+                                                            <label class="form-check-label" for="Chhattisgarh">Chhattisgarh</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Goa" id="Goa" name="state">
+                                                            <label class="form-check-label" for="Goa">Goa</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Gujarat" id="Gujarat" name="state">
+                                                            <label class="form-check-label" for="Gujarat">Gujarat</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Haryana" id="Haryana" name="state">
+                                                            <label class="form-check-label" for="Haryana">Haryana</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Himachal_Pradesh" id="Himachal_Pradesh" name="state">
+                                                            <label class="form-check-label" for="Himachal_Pradesh">Himachal Pradesh</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Jharkhand" id="Jharkhand" name="state">
+                                                            <label class="form-check-label" for="Jharkhand">Jharkhand</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Karnataka" id="Karnataka" name="state">
+                                                            <label class="form-check-label" for="Karnataka">Karnataka</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Kerala" id="Kerala" name="state">
+                                                            <label class="form-check-label" for="Kerala">Kerala</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Madhya_Pradesh" id="Madhya_Pradesh" name="state">
+                                                            <label class="form-check-label" for="Madhya_Pradesh">Madhya Pradesh</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Maharashtra" id="Maharashtra" name="state">
+                                                            <label class="form-check-label" for="Maharashtra">Maharashtra</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Manipur" id="Manipur" name="state">
+                                                            <label class="form-check-label" for="Manipur">Manipur</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Meghalaya" id="Meghalaya" name="state">
+                                                            <label class="form-check-label" for="Meghalaya">Meghalaya</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Mizoram" id="Mizoram" name="state">
+                                                            <label class="form-check-label" for="Mizoram">Mizoram</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Nagaland" id="Nagaland" name="state">
+                                                            <label class="form-check-label" for="Nagaland">Nagaland</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Odisha" id="Odisha" name="state">
+                                                            <label class="form-check-label" for="Odisha">Odisha</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Punjab" id="Punjab" name="state">
+                                                            <label class="form-check-label" for="Punjab">Punjab</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Rajasthan" id="Rajasthan" name="state">
+                                                            <label class="form-check-label" for="Rajasthan">Rajasthan</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Sikkim" id="Sikkim" name="state">
+                                                            <label class="form-check-label" for="Sikkim">Sikkim</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Tamil_Nadu" id="Tamil_Nadu" name="state">
+                                                            <label class="form-check-label" for="Tamil_Nadu">Tamil Nadu</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Telangana" id="Telangana" name="state">
+                                                            <label class="form-check-label" for="Telangana">Telangana</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Tripura" id="Tripura" name="state">
+                                                            <label class="form-check-label" for="Tripura">Tripura</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Uttar_Pradesh" id="Uttar_Pradesh" name="state">
+                                                            <label class="form-check-label" for="Uttar_Pradesh">Uttar Pradesh</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Uttarakhand" id="Uttarakhand" name="state">
+                                                            <label class="form-check-label" for="Uttarakhand">Uttarakhand</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="West_Bengal" id="West_Bengal" name="state">
+                                                            <label class="form-check-label" for="West_Bengal">West Bengal</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <!-- Union Territories -->
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Andaman_and_Nicobar_Islands" id="Andaman_and_Nicobar_Islands" name="state">
+                                                            <label class="form-check-label" for="Andaman_and_Nicobar_Islands">Andaman and Nicobar Islands</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Chandigarh" id="Chandigarh" name="state" >
+                                                            <label class="form-check-label" for="Chandigarh">Chandigarh</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Dadra_and_Nagar_Haveli_and_Daman_and_Diu" id="Dadra_and_Nagar_Haveli_and_Daman_and_Diu" name="state">
+                                                            <label class="form-check-label" for="Dadra_and_Nagar_Haveli_and_Daman_and_Diu">Dadra and Nagar Haveli</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Delhi" id="Delhi" name="state">
+                                                            <label class="form-check-label" for="Delhi">Delhi</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Lakshadweep" id="Lakshadweep" name="state">
+                                                            <label class="form-check-label" for="Lakshadweep">Lakshadweep</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                
+                                        
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Puducherry" id="Puducherry" name="state">
+                                                    <label class="form-check-label" for="Puducherry">Puducherry</label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Jammu_and_Kashmir" id="Jammu_and_Kashmir" name="state">
+                                                    <label class="form-check-label" for="Jammu_and_Kashmir">Jammu and Kashmir</label>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" value="Ladakh" id="Ladakh" name="state">
+                                                    <label class="form-check-label" for="Ladakh">Ladakh</label>
+                                                </div>
+                                            </a>
+                                        </li>
+                        
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <!-- district
+                            <div class="collapse navbar-collapse ul-bg ms-4 " id="btn">
+                                <div class="btn-group dropend btn-sm ">
+                                    <button type="button" class="btn btn-light dropdown-toggle  " data-bs-toggle="dropdown" aria-expanded="false">
+                                    District
+                                    </button>
+                                    <ul class="dropdown-menu force-scroll" id="districtsList" aria-labelledby="dropdownMenuButton" style="list-style: none; padding: 0;height: 200px;">
+                                            <li></li>
+                                    </ul>
+                                </div>
+                            </div>   
+                             -->
+
+
+                    
+                            <!--College type-->
+                            <div class="collapse navbar-collapse ul-bg ms-4" id="btn">
+                                <div class="btn-group dropend btn-sm ">
+                                    <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    University Type
+                                    </button>
+                                    <ul class="dropdown-menu force-scroll "  id="statesList" aria-labelledby="dropdownMenuButton" style="list-style: none; padding: 0;  height: fit-content;">
+
+
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="select" id="select" name="college-type" checked>
+                                                            <label class="form-check-label" for="select">Select</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="State Private University" id="Affiliated College" name="college-type" >
+                                                            <label class="form-check-label" for="Affiliated College"> State Private University</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+
+
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Deemed University-Private" id="Affiliated College" name="college-type" >
+                                                            <label class="form-check-label" for="Affiliated College">Deemed University-Private</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+
+
+
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Institute of National Importance" id="Constituent / University College" name="college-type">
+                                                            <label class="form-check-label" for="Constituent / University College">Institute of National Importance</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+
+
+
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="State Public University" id=Recognized-Center" name="college-type">
+                                                            <label class="form-check-label" for="Recognized-Center">State Public University</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+
+
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Deemed University-Government Aided" id=pg-Center" name="college-type">
+                                                            <label class="form-check-label" for="pg-Center">Deemed University-Government Aided</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="Central University" id=pg-Center" name="college-type">
+                                                            <label class="form-check-label" for="pg-Center">Central University</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="State Open University" id=pg-Center" name="college-type">
+                                                            <label class="form-check-label" for="pg-Center">State Open University</label>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                          
+                                          
+                                    </ul>
+                                </div>
+                            </div>
+
+                    
+                            <!--the submit button-->
+                            <div class="collapse navbar-collapse ul-bg ms-4 " id="btn" ">
+                                <div class="btn-group btn-sm ">
+                                    <button type="submit" class="btn btn-warning">Display Colleges</button>
+                                </div>
+                            </div>  
+                            
+                           
+            
+        </nav>
+    </form>
+
+
+    <main>
+        
+      
+    
+       </div>
+    <ul style="list-style-type: none;">
+        {% if records%}
+
+            {% for record in records %}
+                <li>
+                    <div class="container" style="  margin-top: 5rem;
+                    margin-left: 17rem;
+                     margin-bottom: -4rem;">
+                        <div class="row">
+            
+                            <div class="col-md-8 mx-3">
+                                <div class="card card-style">
+                                    <div class="card-body">
+                                        <p class="card-text card-text-style"></p>
+                                        <div>
+                                            <p class="content"><b> University Name: </b> {{record.university_name}} </p>
+                                            <p class="content"><b> College Type: </b> {{ record.university_type }} </p>
+                                            <p class="content"><b> State Name: </b> {{ record.state_name }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+            
+                        </div>
+                    <!-- S.no: {{ record.s_no_ }}<br>
+                    College Name: {{ record.college_name }}<br>
+                    College Type: {{ record.college_type }}<br>
+                    University Name:{{record.university_name}}<br>
+                    State Name: {{ record.state_name }}<br>
+                    District Name:{{record.district_name}}<br>
+                    <hr> -->
+                </li>
+            {% endfor %}
+        {%else%}
+        <li>
+            <div class="container" style="  margin-top: 5rem;
+            margin-left: 17rem;
+             margin-bottom: -4rem;">
+                <div class="row">
+    
+                    <div class="col-md-8 mx-3">
+                        <div class="card card-style">
+                            <div class="card-body">
+                                <p class="card-text card-text-style"></p>
+                                <div>
+                                    <p class="content"><b> No search result found </b></p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+    
+                </div>
+        </li>
+        {%endif%}
+
+
+    </ul>
+
+
+    
+
+        
+
+    </div>
+   
+
+  
+
+
+
+
+
+      
+       
+   </main>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+    <footer class="bg-dark text-white pt-5 pb-4" id="about-us">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text mb-4 font-weight-bold text-warning">YourNextCollege</h5>
+                    <p><strong>A college finder project using API:</strong><br> A student friendly website that allows students to get the details of all the colleges in India</p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">contributors</h5>
+                    <p>PSG College Of Technology, MCA(23MXian)</p>
+                    <p>NITHISH P (23MX316)<br>PRAVEEN Y (23MX320)<br>RAHUL G (23MX322)</p>
+                </div>
+            
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Tech Stack</h5>
+                    <p>Front-end: HTML,CSS,JavaScript,<br>Bootstrap<br>Backend: Django <br>Database: MySql</p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">API link:</h5>
+                    <p>https://data.gov.in/catalog/<br>list-colleges-aishe-survey</p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Quick links</h5>
+                    <p><a href="/" class="nav-link mx-3 text-white ">🏠Home</a></p>
+                    <p><a href="/login/" class="nav-link mx-3 text-white ">👋Login</a></p>
+                    <p><a href="/register/" class="nav-link mx-3 text-white ">🖊️Sign-up</a></p>
+                    
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){
+            loader.style.display = "none";
+        })
+     </script>
+
+     <script>
+        form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    const formData = new FormData(form);
+    console.log('Selected district:', formData.get('district'));
+    // Proceed with the form submission or AJAX request here
+});
+
+     </script>
+
+     <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+     <script src="{% static 'university-display-pages-filters.js'%}"></script>
+
+
+   
+</html>

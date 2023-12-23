@@ -1,0 +1,158 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.svg'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'login-page.css'%}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* validation using pattern */
+        #confirmpassword-toggle{
+            border: none;
+            box-shadow: inset;
+        }
+        #password-toggle{
+            border: none;
+            box-shadow: inset;
+        }
+        #fname:focus:not(:valid),#lname:focus:not(:valid),#password:focus:not(:valid),#email:focus:not(:valid){
+            color: red;
+            border: 1px solid red;
+            font-weight: 400;
+        }
+        .errorfname,.errorlname,.errorpassword,.erroremail{
+            display: none;
+        }
+        #fname:focus:not(:valid) + .errorfname,#lname:focus:not(:valid)+ .errorlname,#password:focus:not(:valid) + .errorpassword,#email:focus:not(:valid)+.erroremail{
+            display: inline;
+        }
+        .suggest-button{
+            margin-top: 0.5rem;
+            padding:0.3rem;
+            border-radius: 0.3rem;
+            font-size: smaller;
+            border: none;
+            background-color: #FFC436;
+            color: white;
+        }
+        h5{
+            color:red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-light bg">
+            <a href = "#" class="navbar-brand fs-2 ms-3 text-white">YourNextCollege</a> 
+        
+        <button class="navbar-toggler me-3 text-white" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#btn">
+        <i class='bx bx-menu bx-md'></i>
+        </button>
+        <div class="collapse navbar-collapse ul-bg" id="btn">
+            <ul class="navbar-nav ms-auto" >
+                <li class="nav-item">
+                    <a href="/" class="nav-link mx-3 text-white fs-5">🏠Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#about-us" class="nav-link mx-3 text-white fs-5">💡About</a>
+                </li>
+
+
+                <li class="nav-item ">
+                    <a href="/login/" class="nav-link mx-3 text-white fs-5 ">👋Login</a>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="/register/" class="nav-link mx-3 text-white fs-5 ">🖊️Sign-up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+
+
+    <div class="container my-4" >
+        <div class="row  ">
+            <div class="col-md-5 mx-auto">
+                <div class="card login-card-style">
+                    <img src="{% static 'images/login.png'%}" class="login-img-style" alt="...">
+                    <div class="card-body">
+                        <form method="post" action="/login/">
+                            {%csrf_token%}
+                            <h3 style="text-align: center;">Welcome back 😍</h3>
+                            <div class="mb-3 mt-4">
+                              <label for="text" class="form-label">User-Name </label>
+                              <input type="text" name="username"class="form-control" id="username" placeholder="enter your Username" title="Username=FirstName+Lastname" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="password" class="form-label">Password</label><button type="button" id="password-toggle" onclick="togglePasswordVisibility()">🔍</button>
+                              <input type="password" name="password" class="form-control" id="password" placeholder="enter your password" 
+                              maxlength="15" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&].{7,15}" 
+                              title="password must contain one number,one lowercase,one uppercase,one character and not contain whitespace" required>
+                            </div>
+                            {% for message in messages %}
+                            <h5>{{message}}</h5>
+                            {% endfor %}
+
+                            <button type="submit" class="btn btn-style" >Login</button>
+                          </form>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white pt-5 pb-4" id="about-us">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text mb-4 font-weight-bold text-warning">YourNextCollege</h5>
+                    <p><strong>A college finder project using API:</strong><br> A student friendly website that allows students to get the details of all the colleges in India</p>
+                </div>
+    
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">contributors</h5>
+                    <p>PSG College Of Technology, MCA(23MXian)</p>
+                    <p>NITHISH P (23MX316)<br>PRAVEEN Y (23MX320)<br>RAHUL G (23MX322)</p>
+                </div>
+            
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Tech Stack</h5>
+                    <p>Front-end: HTML,CSS,Bootstrap<br>Backend: Django <br>Database: MySql</p>
+                </div>
+    
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">API link:</h5>
+                    <p>https://data.gov.in/catalog/list-colleges-aishe-survey</p>
+                </div>
+    
+            </div>
+        </div>
+    
+    </footer>
+    <script src="{%static  'register-form.js' %}">
+
+
+
+    // Check if data exists in localStorage
+      // Get data from localStorage
+      var fname = localStorage.getItem("fname");
+      var lname =localStorage.getItem("lname");
+      var password = localStorage.getItem("password");
+            console.log(fname);
+      // Populate input fields
+      document.getElementById("username").value = fname+lname;
+      document.getElementById("password").value = password;
+    
+  
+      </script>
+</body >
+</html>

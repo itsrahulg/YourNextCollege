@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourNextCollege</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.svg'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'landingpage.css'%}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div id="preloader">
+
+
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-light fixed-top bg">
+            <a href = "#" class="navbar-brand fs-2 ms-3 text-white">YourNextCollege</a> 
+        
+        <button class="navbar-toggler me-3 text-white" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#btn">
+        <i class='bx bx-menu bx-md'></i>
+        </button>
+        <div class="collapse navbar-collapse ul-bg" id="btn">
+            <ul class="navbar-nav ms-auto" >
+                <li class="nav-item">
+                    <a href="/" class="nav-link mx-3 text-white fs-5">🏠Home</a>
+                </li> 
+
+                <li class="nav-item">
+                    <a href="/institutions/" class="nav-link mx-3 text-white fs-5">🎓Institutions</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#features" class="nav-link mx-3 text-white fs-5">😻Our Features</a>
+                </li>
+                {%if user.is_authenticated %}
+                <li>
+                    <a href="/profile/" class="nav-link mx-3 text-white fs-5">Profile 👤</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="/recommendations/" class="nav-link mx-3 text-white fs-5 ">Recommendations 😇 </a>
+                </li>
+
+                <li>
+                    <a href="/logout/" class="nav-link mx-3 text-white fs-5">👋Logout</a>
+                </li>
+                {%else%}
+                
+                
+
+                <li class="nav-item ">
+                    <a href="/login/" class="nav-link mx-3 text-white fs-5 ">👋Login</a>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="/register/" class="nav-link mx-3 text-white fs-5 ">🖊️Sign-up</a>
+                </li>
+                {%endif%}
+
+             
+
+
+            </ul>
+        </div>
+        
+    </nav>
+
+
+    <main>
+
+        <div class="px-4 py-5 my-4 text-center">
+            <h1 class="display-5 fw-bold ">YourNextCollege</h1>
+            <div class="col-lg-8 mx-auto my-4">
+              <h3>Search from over <span class="typed-text">35000+ Colleges</span></h3><br>
+              <p class="lead mb-2">Are you looking for the perfect college 👀 </p>
+              <p class="lead mb-2"></pclass>But don't know where or how to look🤯&nbsp;&nbsp;  Don't worry we got you covered 😎 </p> 
+              <p class="lead mb-3"> YourNextCollege is a one stop solution that enables you to find your dream college<br>So what are you waiting for....</p> 
+              {%if user.is_authenticated %}
+                <p class="lead mb-4" style="font-weight: bolder;">Welcome back ,{{user.username}} 😄 </p>
+                {%else%}
+              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="/login/"><button type="button" class="btn btn-lg px-4 gap-3 login-btn">👋 Login</button></a>
+                <a href="/register/"><button type="button" class="btn btn-lg px-4 signup-btn" >🖊️ Sign-Up</button></a>
+                {%endif%}
+                
+              </div>
+              <div id="features" ></div>
+            </div>
+            
+        </div>
+
+        <div class="container" >
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card card-style">
+                        
+                            <img src="{% static 'images/card-1.png'%}" class="card-img-top img-style" alt="...">
+                        
+                       
+                        <div class="card-body">
+                          <p class="card-text card-text-style">No more Confusion just filter based on your preferences</p>
+                        </div>
+                      </div>
+                </div>
+    
+                <div class="col-md-4 ">
+                    <div class="card card-style">
+                        <img src="{% static 'images/card-2.png'%}" class="card-img-top img-style" alt="...">
+                        <div class="card-body">
+                          <p class="card-text card-text-style">Data sourced from Indian Government's Public API's</p>
+                        </div>
+                      </div>
+                </div>
+    
+                <div class="col-md-4 ">
+                    <div class="card card-style">
+                        <img src="{% static 'images/card-3.png'%}" class="card-img-top img-style" alt="...">
+                        <div class="card-body">
+                          <p class="card-text card-text-style">Saves time by giving you a summarised and concise data</p>
+                        </div>
+                      </div>
+                </div>
+           </div>
+
+        </div>
+
+
+
+        <div class="container my-4">
+            
+            
+            <div class="row">
+                <div class="col-md-4 my-2">
+                    <div class="card card-style">
+                        <img src="{% static 'images/card-4.png'%}" class="card-img-top img-style" alt="...">
+                        <div class="card-body">
+                          <p class="card-text card-text-style">Official Links for all college websites are available</p>
+                        </div>
+                      </div>
+                </div>
+    
+                <div class="col-md-4 my-2">
+                    <div class="card card-style">
+                        <img src="{% static 'images/card-5.png'%}" class="card-img-top img-style" alt="...">
+                        <div class="card-body">
+                          <p class="card-text card-text-style">Easy login to start your search and find your dream college</p>
+                        </div>
+                      </div>
+                </div>
+    
+                <div class="col-md-4 my-2">
+                    <div class="card card-style">
+                        <img src="{% static 'images/card-6.png'%}" class="card-img-top img-style" alt="...">
+                        <div class="card-body">
+                          <p class="card-text card-text-style">Sign-Up for NIRF rankings based recommendations</p>
+                        </div>
+                      </div>
+                </div>
+           </div>
+
+        </div>
+
+      
+       
+</main>
+
+<footer class="bg-dark text-white pt-5 pb-4" id="about-us">
+    <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text mb-4 font-weight-bold text-warning">YourNextCollege</h5>
+                <p><strong>A college finder project using API:</strong><br> A student friendly website that allows students to get the details of all the colleges in India</p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">contributors</h5>
+                <p>PSG College Of Technology, MCA(23MXian)</p>
+                <p>NITHISH P (23MX316)<br>PRAVEEN Y (23MX320)<br>RAHUL G (23MX322)</p>
+            </div>
+        
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Tech Stack</h5>
+                <p>Front-end: HTML,CSS,JavaScript,<br>Bootstrap<br>Backend: Django <br>Database: MySql</p>
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">API link:</h5>
+                <p>https://data.gov.in/catalog/<br>list-colleges-aishe-survey</p>
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <script>
+
+        var typed = new Typed(".typed-text",{
+            strings:["5000+ Universities","3000+ standalone institutes","10+ filters"],
+            typeSpeed: 150,
+            backSpeed: 150,
+            loop : true
+        })
+
+    </script>
+
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){
+            loader.style.display = "none";
+        })
+    </script>
+
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+
+   
+</html>
